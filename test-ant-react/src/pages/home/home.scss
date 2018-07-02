@@ -1,0 +1,27 @@
+.home-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .home-content {
+        flex: 1;
+    }
+    .home-navbar {
+        height: 50px;
+        line-height: 50px;
+        ul {
+            display: flex;
+            background-color: #fff;
+            li {
+                flex: 1;
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+                color: #333;
+            }
+            .home-active-navbar{
+                color: #c81125;
+            }
+        }
+    }
+}
