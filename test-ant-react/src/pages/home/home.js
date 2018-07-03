@@ -19,30 +19,42 @@ class Home extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     render() {
+        let match = this.props.match;
         return (
             <Router>
                 <div className="home-container" style={{ 'minHeight': this.state.minHeight + 'px' }}>
                     <div className="home-content">
-                        <Route exact path="/" component={Demo} />
-                        <Route path="/about" component={Demo} />
-                        <Route path="/topics" component={Demo} />
+                        <Route exact path="/home" component={Demo} />
+                        <Route path={`${match.url}/about`} component={Demo} />
+                        <Route path={`${match.url}/topics`} component={Demo} />
                     </div>
                     <div className="home-navbar">
                         <ul>
-                            <li><Link to="/" activeClassName="home-active-navbar">Home</Link></li>
-                            <li><Link to="/about" activeClassName="home-active-navbar">About</Link></li>
-                            <li><Link to="/topics" activeClassName="home-active-navbar">Topics</Link></li>
+                            <li><Link exact to="/home">Home</Link></li>
+                            <li><Link exact to={`${match.url}/about`}>About</Link></li>
+                            <li><Link exact to={`${match.url}/topics`}>Topics</Link></li>
                         </ul>
                     </div>
                 </div>
             </Router>
         );
     }
+    componentWillMount() {
+        console.log(1111, this.props.history)
+    }
+    componentDidMount() {
+        console.log(3333)
+    }
     handleClick(match, location) {
-        console.log(match, location, this);
+        console.log(arguments);
         return true;
     }
 }
+
+
+
+
+
 
 export default Home;
 

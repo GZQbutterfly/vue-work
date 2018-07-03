@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 
 
@@ -16,12 +16,18 @@ class AppRouter extends Component {
         return (
             <Router>
                 <div className="app-wrap">
-                    <Route path="/" component={Home} />
-                    <Route path="/demo" component={Demo} />
+                    <Route exact path="/" render={() => <Redirect to="/home" />} />
+                    <Route path="/home" component={Home} />
+                    <Route exact path="/demo" component={Demo} />
+                    <Route exact component={NoMatch} />
                 </div>
             </Router>
         );
     }
+}
+
+function NoMatch() {
+    return (<div>Not Found Page.</div>)
 }
 
 
