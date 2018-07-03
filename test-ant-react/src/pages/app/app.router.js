@@ -11,6 +11,7 @@ import Home from '../home/home';
 class AppRouter extends Component {
     constructor() {
         super();
+        // 
     }
     render() {
         return (
@@ -19,7 +20,7 @@ class AppRouter extends Component {
                     <Route exact path="/" render={() => <Redirect to="/home" />} />
                     <Route path="/home" component={Home} />
                     <Route exact path="/demo" component={Demo} />
-                    <Route exact component={NoMatch} />
+                    <Route path="*" component={NoMatch} />
                 </div>
             </Router>
         );

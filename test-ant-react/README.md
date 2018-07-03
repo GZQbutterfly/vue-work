@@ -24,6 +24,9 @@
     npm i -D babel-preset-react    
 
 
+   ## dva [api](https://dvajs.com/guide/)
+    npm i -S dva 
+
    ## ant
     npm i -S antd-mobile  [api](https://mobile.ant.design/docs/react/use-with-create-react-app-cn)
 

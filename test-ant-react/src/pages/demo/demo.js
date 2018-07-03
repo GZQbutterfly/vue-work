@@ -8,9 +8,7 @@ import { Button } from 'antd-mobile';
 class Demo extends Component {
     constructor() {
         super();
-        document.title = ' React Test';
         this.handleClick = this.handleClick.bind(this);
-
     }
     render() {
         return (
@@ -18,6 +16,10 @@ class Demo extends Component {
                 <Button onClick={this.handleClick}>Start </Button>
             </div>
         );
+    }
+    componentDidMount(){
+        let _props = this.props;
+        console.log(_props);
     }
     handleClick(event) {
         console.log(this, event.target)
