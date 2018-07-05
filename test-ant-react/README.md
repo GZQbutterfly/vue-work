@@ -41,3 +41,6 @@
     npm i -D  sass sass-loader node-sass  
     npm i -D  stylus stylus-loader  
     npm i -D html-withimg-loader
+
+   ## other plugs
+    npm i -S react-iscroll 

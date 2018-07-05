@@ -2,10 +2,15 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     .home-content {
         flex: 1;
     }
     .home-navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
         height: 50px;
         line-height: 50px;
         ul {
@@ -15,17 +20,17 @@
                 flex: 1;
                 text-align: center;
             }
-            a{
+            a {
                 display: inline-block;
                 height: 100%;
                 width: 100%;
                 text-decoration: none;
                 color: #333;
             }
-            .home-active-navbar{
+            .home-active-navbar {
                 color: #c81125;
             }
-            .other-active{
+            .other-active {
                 color: orange;
             }
         }

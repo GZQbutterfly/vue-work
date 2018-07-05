@@ -11,6 +11,7 @@ class Demo extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     render() {
+        console.log(this.props);
         return (
             <div className="demo-container">
                 <Button onClick={this.handleClick}>Start </Button>
@@ -22,7 +23,7 @@ class Demo extends Component {
         console.log(_props);
     }
     handleClick(event) {
-        console.log(this, event.target)
+        // this.props.history.push('/demo', {asda:'34'});
     }
 }
 
