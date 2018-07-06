@@ -44,3 +44,5 @@
 
    ## other plugs
     npm i -S react-iscroll 
+
+    npm i -S crypto-js

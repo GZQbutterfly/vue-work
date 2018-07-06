@@ -2,18 +2,7 @@ import React, { Component } from 'react';
 import ReactDoM from 'react-dom';
 
 
-import ReactIScroll from 'react-iscroll';
-import iScroll from 'iscroll';
-import { PullToRefresh, Button } from 'antd-mobile';
 
-
-function genData() {
-    const dataArr = [];
-    for (let i = 0; i < 20; i++) {
-        dataArr.push(i);
-    }
-    return dataArr;
-}
 
 class List extends Component {
     constructor(props) {
@@ -28,12 +17,7 @@ class List extends Component {
         console.log(props, this.props);
     }
     componentDidMount() {
-        const hei = this.state.height - 0;
-        console.log(this, ReactDoM.findDOMNode(this.ptr));
-        setTimeout(() => this.setState({
-            height: hei,
-            data: genData(),
-        }), 0);
+
     }
 
     render() {
@@ -44,17 +28,11 @@ class List extends Component {
         }
 
         return (
-            <div style={{
-                height: 'calc( 100% - 50px )'
-            }}>
+            <div>
                 <h1>Example of scrollable list</h1>
-                <ReactIScroll iScroll={iScroll}
-                    options={this.props.options}
-                    onScrollStart={this.onScrollStart}>
-                    <ul>
-                        {listOfLi}
-                    </ul>
-                </ReactIScroll>
+                <ul>
+                    {listOfLi}
+                </ul>
             </div >
         );
     }
