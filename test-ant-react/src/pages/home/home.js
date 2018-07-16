@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, NavLink as Link } from 'react-router-do
 
 import { createBrowserHistory } from 'history';
 
-import {MD5, AES} from "crypto-js";
+import { MD5, AES, enc } from "crypto-js";
 
 import Demo from '../demo/demo';
 import List from '../list/list';
@@ -57,7 +57,7 @@ class Home extends Component {
         let md5 = MD5;
         let codeKey = '123123';
         let userKey = '_user';
-        let userVal = { id: 3443, name: '张三' };
+        let userVal = { "expire": 0, "token": null, "userId": null, "nickname": "Garman", "openid": "oMkQA1UZtVz-qSaKIQk_-wwnI2dM", "parentOpenid": null, "sex": "0", "province": null, "city": null, "country": null, "headimgurl": "http://thirdwx.qlogo.cn/mmopen/lLtCx4UDzqCqDjEoDZBNVn3oOY7khxJWrBXy4cuSJuI7oXD5CsI2fOkKVtOtib10kJFawPNLlibpGHvcIKUozr1W3mFUyIBjKw/132", "phone": null, "subscribe": 1, "state": 0, "createAt": "2018-06-08 10:09:49", "attentionAt": "2018-06-08 19:11:46", "goldAmount": null, "subscribeCsvTransfer": "已关注", "stateCsvTransfer": "正常", "inviteCode": null, "fillInviteCodeTimes": 0, "parentId": null, "parentPhone": null, "teamNumber": null, "vipLevel": null, "firstAttentionAt": null, "giveUpAttentionAt": null, "firstAttentionWay": null, "nowAttentionWay": null, "buildShipAt": null, "invitePhone": null, "teamCountNum": null, "shipFrom": null };
         let _userKey = md5(userKey);//aes.encrypt(userKey, codeKey).toString();
         console.log(_userKey);
         // 
@@ -66,7 +66,7 @@ class Home extends Component {
             _v = aes.encrypt(JSON.stringify(userVal), codeKey).toString();
             localStorage.setItem(_userKey, _v);
         }
-        let _userVal = aes.decrypt(_v, codeKey).toString(CryptoJS.enc.Utf8);
+        let _userVal = aes.decrypt(_v, codeKey).toString(enc.Utf8);
         console.log(_userVal);
         // // Encrypt
         // var ciphertext = CryptoJS.AES.encrypt('my message', 'secret key 123');
